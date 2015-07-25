@@ -22,7 +22,7 @@ public class EmployeeService implements Feature {
 		
 		Employee employee = new Employee();
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 		
 		employee.setEmployeeId(1);
 		employee.setFirstName("John");
@@ -30,7 +30,7 @@ public class EmployeeService implements Feature {
 		employee.setGender('M');
 		try {
 			employee.setBirthDate(sdf.parse("04-11-1984"));
-			employee.setHireDate(sdf.parse("16-05-2011"));
+			employee.setHireDate(sdf.parse("05-16-2011"));
 		} catch (ParseException e) {			
 			e.printStackTrace();
 		}
@@ -39,14 +39,8 @@ public class EmployeeService implements Feature {
 	}
 
 	public boolean configure(FeatureContext featureContext) {
-		//featureContext.register(JacksonConfigurator.class);
+		featureContext.register(JacksonConfigurator.class);
 		return true;
-	}
+	}	
 	
-	/*@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayHello(){		
-		return "Hello World";
-	}*/
-
 }
