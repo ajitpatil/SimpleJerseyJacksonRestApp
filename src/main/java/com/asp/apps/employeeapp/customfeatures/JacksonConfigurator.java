@@ -16,7 +16,7 @@ public class JacksonConfigurator implements ContextResolver<ObjectMapper> {
 
     public JacksonConfigurator() {
     	this.mapper = new ObjectMapper();  
-        this.mapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));  
+        this.mapper.setDateFormat(new SimpleDateFormat("MM.dd.yyyy"));  
         this.mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);  
 
     }
